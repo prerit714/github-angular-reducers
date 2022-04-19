@@ -1,4 +1,9 @@
-import { GET_NEW_BANANA, PEEL_BANANA, EAT_BANANA } from './banana.actions';
+import {
+  GET_NEW_BANANA,
+  PEEL_BANANA,
+  EAT_BANANA,
+  TIME_HOP_COMPLETE,
+} from './banana.actions';
 import * as programActions from './banana.actions';
 
 export function reducer(state: any, action: programActions.BananaAction): any {
@@ -23,6 +28,13 @@ export function reducer(state: any, action: programActions.BananaAction): any {
       return {
         ...state,
         bitesRemaining: state.bitesRemaining - action.payload,
+      };
+    }
+    case TIME_HOP_COMPLETE: {
+      console.log('REDUCER: Time hop complete');
+      return {
+        ...state,
+        color: action.payload,
       };
     }
     default: {

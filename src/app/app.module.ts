@@ -14,7 +14,9 @@ import { BananaComponent } from './banana/banana.component';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { initialState, reducers } from './app.state';
+import { initialState, reducers, effects } from './app.state';
+import { RotService } from './rot.service';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   imports: [
@@ -28,6 +30,7 @@ import { initialState, reducers } from './app.state';
     StoreDevtoolsModule.instrument({
       maxAge: 25,
     }),
+    EffectsModule.forRoot(effects),
   ],
   declarations: [AppComponent, BananaComponent],
   bootstrap: [AppComponent],
