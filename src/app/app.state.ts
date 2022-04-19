@@ -14,3 +14,5 @@ export const reducers: ActionReducerMap<AppState> = {
 };
 
 export const getMyBanana = (s: AppState) => s.banana;
+
+export const effects: Array<any> = [bananaStore.BananaEffects];
