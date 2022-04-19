@@ -20,4 +20,14 @@ export class PeelBanana implements Action {
   }
 }
 
-export type BananaAction = GetNewBanana | PeelBanana;
+export const EAT_BANANA = 'Eat Banana';
+
+export class EatBanana implements Action {
+  readonly type: string = EAT_BANANA;
+
+  constructor(public payload: any) {
+    console.log('ACTION' + EAT_BANANA);
+  }
+}
+
+export type BananaAction = GetNewBanana | PeelBanana | EatBanana;
